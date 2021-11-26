@@ -10,10 +10,15 @@
 		}
 	}
 
-	function generate_binary_tree($root,$depth){
-		echo $root->value;
-		echo "<br>";
-		echo $depth;
+	function generate_binary_tree($depth){
+		$node = node_generator();
+
+		if ($depth > 0) {
+	        $node->left_node  = generate_binary_tree($depth-1);
+	        $node->right_node = generate_binary_tree($depth-1);
+	    }
+	    
+	    return $node;
 	}
 
 	/*
@@ -27,7 +32,7 @@
 		if(!$root)
 			return;
 
-		echo $root->value." ";
+		echo $root->value."-";
 
 		preorder_print($root->left_node);
 		preorder_print($root->right_node);
@@ -45,7 +50,9 @@
 		return $node;
 	}
 
-	$root = node_generator();
-	generate_binary_tree($root,3);
+	
+	$root = generate_binary_tree(8);
+
+	preorder_print($root);
 
 ?>
