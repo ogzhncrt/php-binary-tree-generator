@@ -9,7 +9,7 @@
 			$this->value = $value; 
 		}
 	}
-
+	
 	function generate_binary_tree($depth){
 		$node = node_generator();
 
