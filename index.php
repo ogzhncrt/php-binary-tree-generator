@@ -45,7 +45,7 @@
    */
    	function node_generator() {
    		$value = rand(0,20);
-		$node = new tree_node($value);
+		$node  = new tree_node($value);
 
 		return $node;
 	}
